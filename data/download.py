@@ -67,9 +67,10 @@ def deserialize(serialized_example, metadata):
 # Load dataset
 human_dataset = get_dataset('human', 'train').batch(1).repeat()
 mouse_dataset = get_dataset('mouse', 'train').batch(1).repeat()
+mouse_dataset = get_dataset('cattle', 'train').batch(1).repeat()
 n_examples = 10
 
-for name, dataset in [("human", human_dataset), ("mouse", mouse_dataset)]:
+for name, dataset in [("human", human_dataset), ("mouse", mouse_dataset), ("cattle", cattle_dataset)]:
     it = iter(dataset)
 
     sequence = []
