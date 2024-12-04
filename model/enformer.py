@@ -36,7 +36,7 @@ class Enformer(nn.Module):
 
         super().__init__()
 
-        heads_channels = {"human": 5313, "mouse": 1643}
+        heads_channels = {"human": 5313, "mouse": 1643, "cattle": 128}
         dropout_rate = 0.4
         num_alphabet = 4
         assert channels % num_heads == 0, ("channels need to be "
