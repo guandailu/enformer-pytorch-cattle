@@ -10,8 +10,9 @@ class TestEnformer(unittest.TestCase):
         model = enformer.Enformer(channels=1536, num_heads=8, num_transformer_layers=11)
         inputs = torch.Tensor(_get_random_input())
         outputs = model(inputs)
-        self.assertEqual(outputs["human"].shape, torch.Size((1, enformer.TARGET_LENGTH, 5313)))
-        self.assertEqual(outputs["mouse"].shape, torch.Size((1, enformer.TARGET_LENGTH, 1643)))
+        self.assertEqual(outputs["cattle"].shape, torch.Size((1, enformer.TARGET_LENGTH, 5313)))
+        #self.assertEqual(outputs["human"].shape, torch.Size((1, enformer.TARGET_LENGTH, 5313)))
+        #self.assertEqual(outputs["mouse"].shape, torch.Size((1, enformer.TARGET_LENGTH, 1643)))
 
 def _get_random_input():
     seq = "".join(
