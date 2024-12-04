@@ -26,7 +26,7 @@ class Trainer(object):
             self.iter = iter(self.data)
             batch = next(self.iter)
 
-        for head in ["human", "mouse"]:
+        for head in ["cattle"]:
 
             self.optimizer.zero_grad()
 
@@ -39,9 +39,7 @@ class Trainer(object):
 
 def main():
     device = "cuda"
-    data = BasenjiDataset(human_file="data/example_data_human.pt",
-                          mouse_file="data/example_data_mouse.pt",
-                         cattle_file="data/example_data_cattle.pt")
+    data = BasenjiDataset(cattle_file="data/example_data_cattle.pt")
     model = Enformer().to(device)
 
     trainer = Trainer(model, data, device)
